@@ -308,7 +308,7 @@ cmd_dtc = mkdir -p $(dir ${dtc-tmp}) ; \
 		(echo "Check $(shell pwd)/$(pre-tmp) for errors" && false) \
 		; \
 	cat $(depfile).pre.tmp $(depfile).dtc.tmp > $(depfile) ; \
-	sed -i "s:$(pre-tmp):$(<):" $(depfile)
+	sed -i tmp "s:$(pre-tmp):$(<):" $(depfile)
 
 $(obj)/%.dtb: $(src)/%.dts FORCE
 	$(call if_changed_dep,dtc)
@@ -420,7 +420,7 @@ cmd_acpi_c_asl=         \
 
 $(obj)/dsdt.c:    $(src)/dsdt.asl
 	$(call cmd,acpi_c_asl)
-	$(Q)sed -i -e "s,dsdt_aml_code,AmlCode," $@
+	$(Q)sed -i tmp -e "s,dsdt_aml_code,AmlCode," $@
 
 # Bzip2
 # ---------------------------------------------------------------------------
