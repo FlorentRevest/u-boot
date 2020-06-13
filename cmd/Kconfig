@@ -402,6 +402,12 @@ config CMD_ELF
 	help
 	  Boot an ELF/vxWorks image from the memory.
 
+config CMD_BOOTXNU
+	bool "bootxnu"
+	help
+	  XNU image loading support. Allows one to load a Mach-O executable
+	  stored into memory along with an Apple Flattened Device Tree.
+
 config CMD_FDT
 	bool "Flattened Device Tree utility commands"
 	default y

@@ -960,3 +960,9 @@ T:	git https://gitlab.denx.de/u-boot/u-boot.git
 F:	configs/tools-only_defconfig
 F:	*
 F:	*/
+
+XNU
+M:	Florent Revest <revest@google.com>
+S:	Maintained
+F:	cmd/bootxnu.c
+F:	include/xnu.h
